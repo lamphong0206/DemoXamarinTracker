@@ -43,6 +43,20 @@ namespace Tracker
                 txtLat.Text = "Latitude: " + position.Latitude.ToString();
                 txtLong.Text = "Longitude: " + position.Longitude.ToString();
 
+                var geocoder = new Geocoder();
+                var locationAddress = await locator.GetAddressesForPositionAsync(position);
+
+                foreach(var item in locationAddress){
+                    if (item.CountryName != null)
+                    {
+                        txtProvince.Text = "Province: " + item.CountryName;
+                        txtCity.Text = "City: " + item.AdminArea;
+                        txtDistrict.Text = "District: " + item.SubAdminArea;
+                        txtStreet.Text = "Street: " + item.Thoroughfare;
+                        txtAddress.Text = "Address: " + item.SubThoroughfare;
+                        break;
+                    }
+                }
                 MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude, position.Longitude)
                                  , Distance.FromMiles(1)));
             }

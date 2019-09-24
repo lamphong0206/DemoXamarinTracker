@@ -18,7 +18,12 @@
         <StackLayout Grid.Row="1">
             <Label x:Name="txtLat" Text="Latitude: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
             <Label x:Name="txtLong" Text="Longitude: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
-            <Button x:Name="btnGetLocation" Text="Get Current Location" Clicked="BtnGetLocation_Clicked"></Button>
+            <Label x:Name="txtProvince" Text="Province: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label x:Name="txtCity" Text="City: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label x:Name="txtDistrict" Text="District: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label x:Name="txtStreet" Text="Street: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Label x:Name="txtAddress" Text="Address: " VerticalOptions="Center" HorizontalOptions="Center"></Label>
+            <Button x:Name="btnGetLocation" Text="Get Current Location"></Button>
         </StackLayout>
     </Grid>
 
